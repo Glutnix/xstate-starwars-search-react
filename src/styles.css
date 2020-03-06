@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 1px;
+}
+
+.has-text {
+  background-color: green;
+}
