@@ -8,4 +8,4 @@
 
 👀 See the [Search state machine on the XState Visualizer](https://xstate.js.org/viz/?gist=f372e3732e2dd023a32988993685fb65)
 
-[![Screenshot of the calculator state machine in the Visualizer](xstate-vis.png)](https://xstate.js.org/viz/?gist=f372e3732e2dd023a32988993685fb65)
+[![Screenshot of the calculator state machine in the Visualizer](xstate-viz.png)](https://xstate.js.org/viz/?gist=f372e3732e2dd023a32988993685fb65)
