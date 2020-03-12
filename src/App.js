@@ -97,7 +97,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="Form">
+      <div className="is-centered">
         <h1>Search Star Wars API with XState and React</h1>
         <p>
           Current State: <code>{JSON.stringify(current.value)}</code>
@@ -156,27 +156,28 @@ export default function App() {
       )}
 
       <hr />
-
-      <p>
-        <a href="https://github.com/Glutnix/xstate-starwars-search-react">
-          Fork the latest of this on GitHub
-        </a>
-        {} or {}
-        <a href="https://codesandbox.io/s/github/Glutnix/xstate-starwars-search-react/tree/master/">
-          Fork the latest on CodeSandbox
-        </a>
-      </p>
-      <p>
-        <a href="https://xstate.js.org/viz/?gist=f372e3732e2dd023a32988993685fb65">
-          See the state machine diagram in XState Visualizer
-          <br />
-          <img
-            src="../assets/xstate-viz.png"
-            alt=""
-            style={{ width: "200px", border: "1px solid black" }}
-          />
-        </a>
-      </p>
+      <div className="is-centered">
+        <p>
+          <a href="https://github.com/Glutnix/xstate-starwars-search-react">
+            Fork the latest of this on GitHub
+          </a>
+          {} or {}
+          <a href="https://codesandbox.io/s/github/Glutnix/xstate-starwars-search-react/tree/master/">
+            Fork the latest on CodeSandbox
+          </a>
+        </p>
+        <p>
+          <a href="https://xstate.js.org/viz/?gist=f372e3732e2dd023a32988993685fb65">
+            See the state machine diagram in XState Visualizer
+            <br />
+            <img
+              src="../assets/xstate-viz.png"
+              alt=""
+              style={{ width: "200px", border: "1px solid black" }}
+            />
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
