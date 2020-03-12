@@ -97,21 +97,26 @@ export default function App() {
 
   return (
     <div className="App">
-      <pre>{JSON.stringify(current.value)}</pre>
-      <div className="form-group">
-        <label htmlFor="search">Search:</label>
-        <input
-          id="search"
-          type="text"
-          className={[!current.matches("blank") && "has-text"]}
-          onChange={e => {
-            send("SEARCH_CHANGED", { search: e.target.value });
-          }}
-          value={current.context.search}
-        />
+      <div className="Form">
+        <h1>Search Star Wars API with XState and React</h1>
         <p>
-          Try <kbd>chew</kbd> or <kbd>luke</kbd> or <kbd>none</kbd>
+          Current State: <code>{JSON.stringify(current.value)}</code>
         </p>
+        <div className="form-group">
+          <label htmlFor="search">Search:</label>
+          <input
+            id="search"
+            type="text"
+            className={[!current.matches("blank") && "has-text"]}
+            onChange={e => {
+              send("SEARCH_CHANGED", { search: e.target.value });
+            }}
+            value={current.context.search}
+          />
+          <p>
+            Try <kbd>chew</kbd> or <kbd>sky</kbd> or <kbd>none</kbd>
+          </p>
+        </div>
       </div>
 
       {current.matches("searching") && (
@@ -119,22 +124,59 @@ export default function App() {
       )}
 
       {current.matches("searchResults") && (
-        <h2>{current.context.result.results[0].name}</h2>
+        <div>
+          <strong>
+            {current.context.result.results.length} records found.
+          </strong>
+          <ul>
+            {current.context.result.results.map(result => (
+              <li key={result.toString()}>
+                <h2>{result.name}</h2>
+                <p>
+                  {result.gender}, {result.height}cm, {result.mass}kg,{" "}
+                  {result.hair_color} and {result.skin_color}. Features in{" "}
+                  {result.films.length}{" "}
+                  {result.films.length === 1 ? "film" : "films"}
+                </p>
+                {/* <code>{JSON.stringify(result)}</code> */}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
+
       {current.matches("searchNoResults") && (
         <h2>
           Sorry, no <code>{current.context.search}</code> was found.
         </h2>
       )}
-      {current.matches("searchSuccess") && (
-        <div>
-          <pre>{JSON.stringify(current.context.result.results[0])}</pre>
-        </div>
-      )}
 
       {current.matches("searchFailure") && (
         <pre>{JSON.stringify(current.context.error)}</pre>
       )}
+
+      <hr />
+
+      <p>
+        <a href="https://github.com/Glutnix/xstate-starwars-search-react">
+          Fork the latest of this on GitHub
+        </a>
+        {} or {}
+        <a href="https://codesandbox.io/s/github/Glutnix/xstate-starwars-search-react/tree/master/">
+          Fork the latest on CodeSandbox
+        </a>
+      </p>
+      <p>
+        <a href="https://xstate.js.org/viz/?gist=f372e3732e2dd023a32988993685fb65">
+          See the state machine diagram in XState Visualizer
+          <br />
+          <img
+            src="../assets/xstate-viz.png"
+            alt=""
+            style={{ width: "200px", border: "1px solid black" }}
+          />
+        </a>
+      </p>
     </div>
   );
 }

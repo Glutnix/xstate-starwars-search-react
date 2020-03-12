@@ -1,5 +1,9 @@
 .App {
   font-family: sans-serif;
+  line-height: 1.5;
+}
+
+.Form {
   text-align: center;
 }
 
@@ -9,5 +13,16 @@ input {
 }
 
 .has-text {
-  background-color: green;
+  background-color: #eeffcc;
+}
+
+code,
+kbd {
+  background-color: #eee;
+  padding: 4px;
+  font-size: 1.2em;
+}
+
+ul {
+  list-style: none;
 }
