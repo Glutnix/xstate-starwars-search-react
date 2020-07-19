@@ -1,7 +1,7 @@
 {
   "name": "xstate-starwars-search-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Improved response to https://spectrum.chat/statecharts/general/change-state-based-on-input-content~4ad95da6-866a-4687-82e7-6f7c70671eff",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
