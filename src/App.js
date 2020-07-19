@@ -4,7 +4,7 @@ import { useMachine } from "@xstate/react";
 import "./styles.css";
 
 const searchStarWarsPeople = search =>
-  fetch(`https://swapi.co/api/people/?search=${search}`).then(response =>
+  fetch(`https://swapi.dev/api/people/?search=${search}`, {}).then(response =>
     response.json()
   );
 
